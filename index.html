@@ -10,61 +10,79 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f1f4f5;--surface:#ffffff;--ink:#14323b;--muted:#4d6870;--line:#d3dde0;--brand:#1c4b57;--brand-ink:#ffffff;--accent:#c98a14;--wa:#1f7a4d;--wa-ink:#fff;--hh:97px}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1e22;--surface:#162a30;--ink:#e6eef0;--muted:#9db3b9;--line:#27424a;--brand:#7fc0cf;--brand-ink:#0f1e22;--accent:#e3a93a;--wa:#3fb37a;--wa-ink:#06190f}}
+:root{--bg:#f1f4f5;--surface:#ffffff;--ink:#14323b;--muted:#4d6870;--line:#d3dde0;--brand:#1c4b57;--brand-ink:#ffffff;--accent:#c98a14;--wa:#1f7a4d;--wa-ink:#fff;--band:#173d47;--band-ink:#eaf3f4;--band-muted:#b4ccd1;--hh:97px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1e22;--surface:#162a30;--ink:#e6eef0;--muted:#9db3b9;--line:#27424a;--brand:#7fc0cf;--brand-ink:#0f1e22;--accent:#e3a93a;--wa:#3fb37a;--wa-ink:#06190f;--band:#0a1417;--band-ink:#e6eef0;--band-muted:#9db3b9}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;line-height:1.55;font-size:1.0625rem}
 img{max-width:100%;display:block}
 a{color:var(--brand)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-section[id]{scroll-margin-top:var(--hh)}
+[id]{scroll-margin-top:var(--hh)}
+.card[id]{scroll-margin-top:calc(var(--hh) + 12px)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
 h1,h2,h3{font-family:Lora,Georgia,serif;font-weight:600;line-height:1.2;margin:0 0 .5rem}
-h1{font-size:clamp(2.3rem,6vw,4rem);letter-spacing:-.01em}
+h1{font-size:clamp(2.3rem,6vw,3.9rem);letter-spacing:-.01em}
 h2{font-size:clamp(1.6rem,3.6vw,2.2rem)}
 h3{font-size:1.2rem}
 p{margin:0 0 .8rem;max-width:62ch}
+.label{font-size:.88rem;font-weight:600;color:var(--accent);margin:0 0 .4rem}
+section{padding:clamp(1.75rem,4vw,2.75rem) 0}
+
+/* menu */
 header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
-.bar{height:calc(var(--hh) - 1px);display:grid;align-items:center;column-gap:.9rem;
-  grid-template-columns:1fr auto auto;grid-template-rows:56px 40px;
-  grid-template-areas:"brand icons wa" "links links links"}
+.bar{height:calc(var(--hh) - 1px);display:grid;align-items:center;column-gap:.9rem;grid-template-columns:1fr auto auto;grid-template-rows:56px 40px;grid-template-areas:"brand icons wa" "links links links"}
 .brand{grid-area:brand;font-family:Lora,Georgia,serif;font-weight:600;font-size:1.1rem;color:var(--ink);text-decoration:none;white-space:nowrap}
 .icons{grid-area:icons;display:flex;align-items:center;gap:.5rem}
 .icons img{width:28px;height:28px;border-radius:7px}
 .wa{grid-area:wa;display:block;line-height:0}
 .wa img{width:34px;height:34px}
-.links{grid-area:links;display:flex;gap:.8rem;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.links{grid-area:links;display:flex;gap:.8rem;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
 .links::-webkit-scrollbar{display:none}
 .links a{color:var(--muted);text-decoration:none;font-size:.86rem;padding:.4rem 0}
 .links a:hover{color:var(--ink)}
 @media(max-width:380px){.links{gap:.6rem}.links a{font-size:.82rem}}
 @media(min-width:761px){
   :root{--hh:68px}
-  .bar{grid-template-columns:1fr auto auto auto;grid-template-rows:auto;column-gap:1.75rem;
-    grid-template-areas:"brand icons links wa"}
+  .bar{grid-template-columns:1fr auto auto auto;grid-template-rows:auto;column-gap:1.75rem;grid-template-areas:"brand icons links wa"}
   .brand{font-size:1.3rem}
   .links{gap:2rem;overflow:visible}
   .links a{font-size:.97rem}
-  .wa img{width:34px;height:34px}
 }
-.btn{display:inline-block;padding:.9rem 1.5rem;border-radius:999px;background:var(--wa);color:var(--wa-ink);font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+
+/* botoes */
+.btn{display:inline-block;padding:.85rem 1.45rem;border-radius:999px;background:var(--wa);color:var(--wa-ink);font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
 .btn:hover{filter:brightness(1.08)}
 .btn.alt{background:transparent;color:var(--brand);border:2px solid var(--brand)}
-.apoio{display:inline-block;line-height:0;border-radius:8px;overflow:hidden;margin-top:.5rem}
-.apoio img{width:240px;height:auto}
-.hero{padding:clamp(1.75rem,4vw,3rem) 0 clamp(1.5rem,3.5vw,2.5rem)}
-.hero p.lead{font-size:1.25rem;color:var(--muted);max-width:52ch}
-.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
-.hero .note{font-size:.95rem;color:var(--muted);margin:.75rem 0 0}
-section{padding:clamp(1.75rem,4vw,2.75rem) 0}
-.alt-bg{background:var(--surface);border-block:1px solid var(--line)}
-.cols2 p{max-width:none}
-@media(min-width:800px){.cols2{columns:2;column-gap:2.5rem}.cols2 p{break-inside:avoid}}
-.steps{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));counter-reset:s}
-.steps li{counter-increment:s;padding-left:3.2rem;position:relative}
-.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:2.3rem;height:2.3rem;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:600}
+.btn.gold{background:var(--accent);color:#1a1405}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.1rem}
+
+/* apresentacao */
+.hero{padding:clamp(1.5rem,4vw,3rem) 0 clamp(1.5rem,3.5vw,2.5rem)}
+.hero-grid{display:grid;gap:1.75rem;grid-template-columns:1fr;align-items:center}
+@media(min-width:800px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:3rem}}
+.hero .lead{font-size:1.2rem;color:var(--muted);max-width:50ch}
+.note{font-size:.95rem;color:var(--muted);margin:.75rem 0 0}
+.portrait{margin:0;max-width:340px}
+@media(max-width:799px){.portrait{max-width:250px}}
+.portrait .ph{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:var(--line)}
+.portrait .ph>img:first-child{width:100%;height:100%;object-fit:cover}
+.portrait .badge{position:absolute;left:.7rem;bottom:.7rem;width:92px;height:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+.portrait figcaption{margin-top:.6rem;font-size:.95rem;color:var(--muted)}
+.portrait figcaption strong{display:block;color:var(--ink);font-family:Lora,Georgia,serif;font-size:1.1rem}
+
+/* convite aberto */
+.invite{background:var(--band);color:var(--band-ink)}
+.invite .wrap{display:grid;gap:1.5rem;grid-template-columns:1fr;align-items:center}
+@media(min-width:800px){.invite .wrap{grid-template-columns:1fr 200px;gap:3rem}}
+.invite h2{color:var(--band-ink)}
+.invite .sub{font-family:Lora,Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--band-muted);margin-bottom:.7rem}
+.invite p{color:var(--band-ink)}
+.invite .cover{width:120px;border-radius:6px;box-shadow:0 14px 30px rgba(0,0,0,.4);justify-self:start}
+@media(min-width:800px){.invite .cover{width:200px;justify-self:center;transform:rotate(2deg)}}
+
+/* nova era: projeto */
 .vgrid{display:grid;gap:1.1rem;grid-template-columns:1fr;align-items:center}
 .flag{width:min(220px,62%);height:auto}
 @media(min-width:800px){
@@ -72,19 +90,52 @@ section{padding:clamp(1.75rem,4vw,2.75rem) 0}
   .vgrid>div{grid-column:1;grid-row:1}
   .flag{grid-column:2;grid-row:1;width:100%;justify-self:center}
 }
-.two{display:grid;gap:1.75rem;grid-template-columns:1fr}
-@media(min-width:800px){.two{grid-template-columns:1.1fr .9fr;align-items:start}}
 .price{border-left:4px solid var(--accent);padding:.2rem 0 .2rem 1.1rem;margin:.9rem 0}
 .price p{margin:0;font-size:1.15rem}
-.photo{aspect-ratio:4/5;background:var(--line);border-radius:6px;overflow:hidden;display:grid;place-items:center;color:var(--muted);font-size:.9rem;text-align:center;padding:1rem}
-.photo img{width:100%;height:100%;object-fit:cover}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(1.1rem,3vw,1.6rem);margin-top:1.25rem}
+.card h3{font-size:1.3rem}
+.card p{max-width:none}
+@media(min-width:800px){.cols2{columns:2;column-gap:2.5rem}.cols2 p{break-inside:avoid}}
+.steps{list-style:none;padding:0;margin:.9rem 0 0;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));counter-reset:s}
+.steps li{counter-increment:s;padding-left:3.1rem;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:2.3rem;height:2.3rem;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:600}
+.steps p{margin-bottom:0}
+
+/* sobre */
+.alt-bg{background:var(--surface);border-block:1px solid var(--line)}
+.two{display:grid;gap:1.75rem;grid-template-columns:1fr}
+@media(min-width:800px){.two{grid-template-columns:1.1fr .9fr;align-items:start}}
 ul.clean{padding-left:1.2rem;margin:0 0 1rem}
 ul.clean li{margin-bottom:.4rem}
-details{margin-top:1rem;border-top:1px solid var(--line);padding-top:.75rem}
-summary{cursor:pointer;font-weight:600;color:var(--brand)}
-.social{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:.9rem}
-.safety{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.85rem 1.1rem;font-size:.95rem;color:var(--muted);margin-top:1.25rem;max-width:62ch}
-footer{padding:1.25rem 0 1.75rem;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+
+/* apoie */
+.apoio{display:inline-block;line-height:0;border-radius:8px;overflow:hidden;margin-top:.5rem}
+.apoio img{width:240px;height:auto}
+
+/* navegue */
+.nav-grid{display:grid;gap:.75rem;grid-template-columns:repeat(2,1fr);margin-top:1rem}
+@media(min-width:900px){.nav-grid{grid-template-columns:repeat(3,1fr)}}
+.nav-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;color:var(--ink)}
+.nav-card:hover{border-color:var(--brand)}
+.nav-card strong{display:block;font-family:Lora,Georgia,serif;font-size:1.15rem;margin-bottom:.15rem}
+.nav-card span{display:block;color:var(--muted);font-size:.95rem}
+.nav-card em{display:block;font-style:normal;font-weight:600;color:var(--brand);margin-top:.6rem;font-size:.95rem}
+
+/* rodape */
+footer{background:var(--band);color:var(--band-ink);padding:clamp(1.75rem,4vw,2.75rem) 0 1.25rem}
+.foot-grid{display:grid;gap:1.5rem;grid-template-columns:1fr}
+@media(min-width:800px){.foot-grid{grid-template-columns:1.2fr .8fr 1.2fr;gap:2.5rem}}
+footer h3,footer h4{color:var(--band-ink);margin:0 0 .5rem}
+footer h4{font-family:Lora,Georgia,serif;font-size:1.05rem}
+footer p{color:var(--band-muted)}
+footer a{color:var(--band-ink)}
+footer ul{list-style:none;margin:0;padding:0;columns:2}
+@media(min-width:800px){footer ul{columns:1}}
+footer li{margin-bottom:.35rem}
+.foot-social{display:flex;flex-wrap:wrap;gap:1.1rem;margin-top:.9rem}
+.safety{border-top:1px solid rgba(255,255,255,.18);margin-top:1.5rem;padding-top:1rem;font-size:.92rem;color:var(--band-muted);max-width:none}
+.copy{font-size:.88rem;color:var(--band-muted);margin:.5rem 0 0}
+@media(max-width:619px){.nav-card{padding:.85rem .9rem}.nav-card span{display:none}.nav-card strong{font-size:1.02rem;margin:0}.nav-card em{margin-top:.35rem}}
 </style>
 </head>
 <body>
@@ -93,9 +144,9 @@ footer{padding:1.25rem 0 1.75rem;border-top:1px solid var(--line);font-size:.9re
   <div class="wrap bar">
     <a class="brand" href="#">Psicanálise Clínica</a>
     <div class="icons">
-      <a href="https://www.instagram.com/clinicadaescuta___" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="instagram.png" alt="Instagram" width="30" height="30"></a>
-      <a href="https://www.linkedin.com/in/carloshabarreto/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="linkedin.png" alt="LinkedIn" width="30" height="30"></a>
-      <a href="https://medium.com/@carloshabarreto" target="_blank" rel="noopener noreferrer" aria-label="Medium"><img src="medium.png" alt="Medium" width="30" height="30"></a>
+      <a href="https://www.instagram.com/clinicadaescuta___" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="instagram.png" alt="Instagram" width="28" height="28"></a>
+      <a href="https://www.linkedin.com/in/carloshabarreto/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="linkedin.png" alt="LinkedIn" width="28" height="28"></a>
+      <a href="https://medium.com/@carloshabarreto" target="_blank" rel="noopener noreferrer" aria-label="Medium"><img src="medium.png" alt="Medium" width="28" height="28"></a>
     </div>
     <nav class="links" aria-label="Principal">
       <a href="#como-funciona">Como funciona</a>
@@ -104,118 +155,164 @@ footer{padding:1.25rem 0 1.75rem;border-top:1px solid var(--line);font-size:.9re
       <a href="#sobre">Sobre</a>
       <a href="#ebook">Ebook</a>
     </nav>
-    <a class="wa" href="https://wa.me/5585996299423?text=Ol%C3%A1%2C%20Carlos.%20Quero%20conversar." target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp"><img src="whatsapp.png" alt="WhatsApp" width="36" height="36"></a>
+    <a class="wa" href="https://wa.me/5585996299423?text=Ol%C3%A1%2C%20Carlos.%20Quero%20conversar." target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp"><img src="whatsapp.png" alt="WhatsApp" width="34" height="34"></a>
   </div>
 </header>
 
-<main id="topo">
+<main>
+  <!-- Apresentação -->
   <div class="hero">
-    <div class="wrap">
-      <h1>Aqui você pode falar.</h1>
-      <p class="lead">Psicanálise online para adultos, com escuta ética, sem pressa e sem julgamento. Uma clínica com valores sociais para quem precisa ser acolhido e não pode pagar o preço de mercado.</p>
-      <div class="actions">
-        <a target="_blank" class="btn" href="https://wa.me/5585996299423?text=Ol%C3%A1%2C%20Carlos.%20Quero%20agendar%20uma%20primeira%20conversa." rel="noopener noreferrer">Agendar primeira conversa</a>
-        <a class="btn alt" href="#como-funciona">Entender como funciona</a>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="label">Clínica da Escuta · Psicanálise online</p>
+        <h1>Aqui você pode falar.</h1>
+        <p class="lead">Psicanálise online para adultos, com escuta ética, sem pressa e sem julgamento. Uma clínica com valores sociais para quem precisa ser acolhido e não pode pagar o preço de mercado.</p>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/5585996299423?text=Ol%C3%A1%2C%20Carlos.%20Quero%20agendar%20uma%20primeira%20conversa." target="_blank" rel="noopener noreferrer">Agendar primeira conversa</a>
+          <a class="btn alt" href="#como-funciona">Entender como funciona</a>
+        </div>
+        <p class="note">A primeira mensagem não compromete você com nada. É só um começo.</p>
       </div>
-      <p class="note">A primeira mensagem não compromete você com nada. É só um começo.</p>
+      <figure class="portrait">
+        <div class="ph"><img src="foto.jpg" alt="Carlos Barreto, psicanalista" width="340" height="425"><img class="badge" src="logo.png" alt="Clínica da Escuta" width="92" height="58"></div>
+        <figcaption><strong>Carlos Barreto</strong>Psicanalista e escritor, criador da Clínica da Escuta</figcaption>
+      </figure>
     </div>
   </div>
 
-  <section id="para-quem">
+  <!-- Convite aberto -->
+  <section id="ebook" class="invite">
     <div class="wrap">
-      <h2>Para quem é este espaço</h2>
-      <div class="cols2">
-      <p>Para adultos que enfrentam ansiedade, conflitos familiares e sofrimento emocional, e não têm onde colocar isso em palavras. Para quem nunca fez terapia e tem dúvidas, e também para quem já tentou e quer um lugar onde seja realmente ouvido.</p>
-      <p>Na psicanálise, você fala livremente e o analista escuta com atenção e responsabilidade. Não é aconselhamento rápido nem receita de felicidade: é um trabalho feito com você, no seu tempo.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="como-funciona" class="alt-bg">
-    <div class="wrap">
-      <h2>Como funciona</h2>
-      <ol class="steps">
-        <li><h3>Você me chama</h3><p>Pelo WhatsApp, com uma mensagem simples. Não precisa explicar tudo.</p></li>
-        <li><h3>Primeira conversa</h3><p>Nos conhecemos, você conta o que quiser e tira suas dúvidas. Nesse momento também conversamos sobre a sua situação para definir o valor possível.</p></li>
-        <li><h3>Seguimos no seu ritmo</h3><p>Se fizer sentido para você, definimos os encontros e começamos o trabalho, todo online, de onde você estiver.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="valores">
-    <div class="wrap vgrid">
-      <img class="flag" src="logo.png" alt="Bandeira da Clínica da Escuta" width="400" height="253">
       <div>
-        <h2>Uma clínica com valores sociais</h2>
-        <div class="price">
-          <p>Em 25 de abril de 2025 começamos um trabalho ousado e urgente: atendimento para quem realmente não pode pagar os valores praticados por aí.</p>
+        <p class="label">Convite aberto</p>
+        <h2>Para quem nunca fez terapia</h2>
+        <p class="sub">Ebook gratuito, em linguagem simples e acolhedora</p>
+        <p>Para quem sempre quis entender o que acontece numa terapia, mas nunca teve coragem ou oportunidade de começar. Falar de si não precisa ser doloroso. Pode ser um alívio.</p>
+        <a class="btn gold" href="Barreto_Carlos_Para-Quem-Nunca-Fez-Terapia_2026.pdf" download>Baixar o ebook gratuito</a>
+      </div>
+      <img class="cover" src="capa-ebook.jpg" alt="Capa do ebook Para quem nunca fez terapia" width="200" height="283">
+    </div>
+  </section>
+
+  <!-- Uma nova era: o projeto -->
+  <section id="valores">
+    <div class="wrap">
+      <div class="vgrid">
+        <img class="flag" src="logo.png" alt="Bandeira da Clínica da Escuta" width="400" height="253">
+        <div>
+          <p class="label">Uma nova era para a escuta</p>
+          <h2>Uma clínica com valores sociais</h2>
+          <div class="price">
+            <p>Em 25 de abril de 2025 começamos um trabalho ousado e urgente: atendimento para quem realmente não pode pagar os valores praticados por aí.</p>
+          </div>
+          <p>Por ser totalmente online, os custos são menores e o atendimento fica mais acessível. Na primeira conversa fazemos juntos o levantamento da sua situação para chegar a um valor possível.</p>
+          <p>Inspirados nas clínicas públicas que Freud defendeu em 1922, buscamos tornar a escuta um serviço para todos.</p>
+          <a class="btn" href="https://wa.me/5585996299423?text=Ol%C3%A1%2C%20Carlos.%20Gostaria%20de%20saber%20sobre%20os%20valores." target="_blank" rel="noopener noreferrer">Perguntar sobre valores</a>
         </div>
-        <p>Por ser totalmente online, os custos são menores e o atendimento fica mais acessível. Na primeira conversa fazemos juntos o levantamento da sua situação para chegar a um valor possível.</p>
-        <p>Inspirados nas clínicas públicas que Freud defendeu em 1922, buscamos tornar a escuta um serviço para todos.</p>
-        <a target="_blank" class="btn" href="https://wa.me/5585996299423?text=Ol%C3%A1%2C%20Carlos.%20Gostaria%20de%20saber%20sobre%20os%20valores." rel="noopener noreferrer">Perguntar sobre valores</a>
+      </div>
+
+      <div class="card" id="para-quem">
+        <h3>Para quem é este espaço</h3>
+        <div class="cols2">
+          <p>Para adultos que enfrentam ansiedade, conflitos familiares e sofrimento emocional, e não têm onde colocar isso em palavras. Para quem nunca fez terapia e tem dúvidas, e também para quem já tentou e quer um lugar onde seja realmente ouvido.</p>
+          <p>Na psicanálise, você fala livremente e o analista escuta com atenção e responsabilidade. Não é aconselhamento rápido nem receita de felicidade: é um trabalho feito com você, no seu tempo.</p>
+        </div>
+      </div>
+
+      <div class="card" id="como-funciona">
+        <h3>Como funciona</h3>
+        <ol class="steps">
+          <li><h3>Você me chama</h3><p>Pelo WhatsApp, com uma mensagem simples. Não precisa explicar tudo.</p></li>
+          <li><h3>Primeira conversa</h3><p>Nos conhecemos, você conta o que quiser e tira suas dúvidas. Nesse momento também conversamos sobre a sua situação para definir o valor possível.</p></li>
+          <li><h3>Seguimos no seu ritmo</h3><p>Se fizer sentido para você, definimos os encontros e começamos o trabalho, todo online, de onde você estiver.</p></li>
+        </ol>
       </div>
     </div>
   </section>
 
+  <!-- Sobre -->
   <section id="sobre" class="alt-bg">
     <div class="wrap two">
       <div>
+        <p class="label">Quem escuta</p>
         <h2>Carlos Barreto</h2>
         <p>Psicanalista e escritor, criador da Clínica da Escuta. Meu trabalho nasce do encontro com histórias e da convicção de que ser escutado com presença pode ser o início de uma nova forma de existir.</p>
         <p>Busco tornar o cuidado emocional mais acessível, sem abrir mão da complexidade que cada história carrega.</p>
+      </div>
+      <div class="card" style="margin-top:0">
         <h3>Participação</h3>
         <ul class="clean">
-          <li>Membro do <a target="_blank" href="https://cpapec.org/" rel="noopener noreferrer">Coletivo de Pesquisa Ativista em Psicanálise Educação e Cultura</a></li>
-          <li>Membro da <a target="_blank" href="https://cpapec.org/epep" rel="noopener noreferrer">Escola Psicanalítica da Escuta Periphérica</a></li>
-          <li>Membro da <a target="_blank" href="https://site-zqre18q3o.godaddysites.com/" rel="noopener noreferrer">Sociedade Psicanalítica Ecos Freudianos</a></li>
+          <li>Membro do <a href="https://cpapec.org/" target="_blank" rel="noopener noreferrer">Coletivo de Pesquisa Ativista em Psicanálise Educação e Cultura</a></li>
+          <li>Membro da <a href="https://cpapec.org/epep" target="_blank" rel="noopener noreferrer">Escola Psicanalítica da Escuta Periphérica</a></li>
+          <li>Membro da <a href="https://site-zqre18q3o.godaddysites.com/" target="_blank" rel="noopener noreferrer">Sociedade Psicanalítica Ecos Freudianos</a></li>
         </ul>
         <h3>Atuação</h3>
         <ul class="clean">
           <li>Clínica da Escuta</li>
-          <li><a target="_blank" href="https://cpapec.org/clinica" rel="noopener noreferrer">Dispositivo de Escuta Xica Manicongo</a></li>
+          <li><a href="https://cpapec.org/clinica" target="_blank" rel="noopener noreferrer">Dispositivo de Escuta Xica Manicongo</a></li>
         </ul>
       </div>
-      <div class="photo">
-        <img src="foto.jpg" alt="Carlos Barreto, psicanalista" onerror="this.remove();this.parentNode.textContent='Coloque sua foto aqui (arquivo foto.jpg)'">
-      </div>
     </div>
   </section>
 
-  <section id="ebook">
+  <!-- Apoie -->
+  <section id="apoie">
     <div class="wrap">
-      <h2>Para quem nunca fez terapia</h2>
-      <p>Um ebook gratuito, em linguagem simples e acolhedora, para quem sempre quis entender o que acontece numa terapia, mas nunca teve coragem ou oportunidade de começar. Falar de si não precisa ser doloroso. Pode ser um alívio.</p>
-      <a class="btn alt" href="Barreto_Carlos_Para-Quem-Nunca-Fez-Terapia_2026.pdf" download>Baixar o ebook gratuito</a>
-    </div>
-  </section>
-
-  <section id="apoie" class="alt-bg">
-    <div class="wrap">
+      <p class="label">Participe</p>
       <h2>Ajude a escuta chegar a mais pessoas</h2>
       <p>Se você quer e pode contribuir, sua doação viabiliza atendimento para quem precisa ser acolhido e não pode pagar. Com uma contribuição mínima de R$10 você já ajuda a abrir um espaço de escuta para quem está em sofrimento.</p>
       <p>Doe, compartilhe e participe.</p>
-      <a target="_blank" class="apoio" href="https://apoia.se/todos_comprometidos" rel="noopener noreferrer"><img src="apoiase.png" alt="Apoiar a Clínica da Escuta no Apoia.se" width="240" height="61"></a>
+      <a class="apoio" href="https://apoia.se/todos_comprometidos" target="_blank" rel="noopener noreferrer"><img src="apoiase.png" alt="Apoiar a Clínica da Escuta no Apoia.se" width="240" height="61"></a>
     </div>
   </section>
 
-  <section id="contato">
+  <!-- Navegue pelo site -->
+  <section class="alt-bg">
     <div class="wrap">
-      <h2>Vamos conversar?</h2>
-      <p>Mande uma mensagem e eu respondo pessoalmente.</p>
-      <a target="_blank" class="btn" href="https://wa.me/5585996299423?text=Ol%C3%A1%2C%20Carlos.%20Quero%20conversar." rel="noopener noreferrer">Chamar no WhatsApp: (85) 99629-9423</a>
-      <div class="social">
-        <a target="_blank" href="https://www.instagram.com/clinicadaescuta___" rel="noopener noreferrer">Instagram</a>
-        <a target="_blank" href="https://www.linkedin.com/in/carloshabarreto/" rel="noopener noreferrer">LinkedIn</a>
-        <a target="_blank" href="https://medium.com/@carloshabarreto" rel="noopener noreferrer">Medium</a>
+      <h2>Navegue pelo site</h2>
+      <div class="nav-grid">
+        <a class="nav-card" href="#para-quem"><strong>Para quem é este espaço</strong><span>Ansiedade, conflitos familiares e sofrimento emocional</span><em>Acessar →</em></a>
+        <a class="nav-card" href="#como-funciona"><strong>Como funciona</strong><span>Da primeira mensagem ao seu ritmo</span><em>Acessar →</em></a>
+        <a class="nav-card" href="#valores"><strong>Valores sociais</strong><span>Atendimento online acessível a quem precisa</span><em>Acessar →</em></a>
+        <a class="nav-card" href="#sobre"><strong>Sobre Carlos</strong><span>Participação e atuação</span><em>Acessar →</em></a>
+        <a class="nav-card" href="#ebook"><strong>Ebook gratuito</strong><span>Para quem nunca fez terapia</span><em>Acessar →</em></a>
+        <a class="nav-card" href="#apoie"><strong>Apoie o projeto</strong><span>Ajude a escuta chegar a mais pessoas</span><em>Acessar →</em></a>
       </div>
-      <p class="safety">Se você estiver em sofrimento intenso ou pensando em se machucar, procure ajuda imediata: ligue 188 (CVV, 24 horas) ou 192 (SAMU).</p>
     </div>
   </section>
 </main>
 
-<footer>
+<footer id="contato">
   <div class="wrap">
-    <p>Clínica da Escuta &copy; 2026. Carlos Barreto, psicanalista. Fortaleza, Ceará.</p>
+    <div class="foot-grid">
+      <div>
+        <h3>Clínica da Escuta</h3>
+        <p>Psicanálise online com valores sociais. Escuta ética, sem pressa e sem julgamento.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#para-quem">Para quem é</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#valores">Valores sociais</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#ebook">Ebook</a></li>
+          <li><a href="#apoie">Apoie</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Vamos conversar?</h4>
+        <p>Mande uma mensagem e eu respondo pessoalmente.</p>
+        <a class="btn gold" href="https://wa.me/5585996299423?text=Ol%C3%A1%2C%20Carlos.%20Quero%20conversar." target="_blank" rel="noopener noreferrer">WhatsApp: (85) 99629-9423</a>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/clinicadaescuta___" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.linkedin.com/in/carloshabarreto/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://medium.com/@carloshabarreto" target="_blank" rel="noopener noreferrer">Medium</a>
+        </div>
+      </div>
+    </div>
+    <p class="safety">Se você estiver em sofrimento intenso ou pensando em se machucar, procure ajuda imediata: ligue 188 (CVV, 24 horas) ou 192 (SAMU).</p>
+    <p class="copy">&copy; 2026 Clínica da Escuta. Carlos Barreto, psicanalista. Fortaleza, Ceará.</p>
   </div>
 </footer>
 
