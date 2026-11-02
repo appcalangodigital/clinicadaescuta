@@ -89,6 +89,11 @@ header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px s
 .portrait .flag{display:block;width:100%;height:auto}
 @media(max-width:799px){.portrait.flagfig{max-width:300px}}
 .portrait.sobre-foto{max-width:220px;margin:0 0 1.25rem}
+.sobre-topo{display:flex;gap:2rem;align-items:center;margin-bottom:2rem}
+.sobre-topo .portrait.sobre-foto{flex:0 0 260px;max-width:260px;margin:0}
+.sobre-texto{flex:1}
+.sobre-caixa{margin-top:0;display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;width:100%}
+@media(max-width:799px){.sobre-topo{flex-direction:column;text-align:left}.sobre-topo .portrait.sobre-foto{flex:none;max-width:220px}.sobre-caixa{grid-template-columns:1fr}}
 
 /* convite aberto */
 .invite{background:var(--band);color:var(--band-ink)}
@@ -281,32 +286,38 @@ footer li{margin-bottom:.35rem}
 
   <!-- Sobre -->
   <section id="sobre" class="alt-bg">
-    <div class="wrap two">
-      <div>
+    <div class="wrap">
+      <div class="sobre-topo">
         <figure class="portrait sobre-foto">
           <div class="ph"><img src="foto.jpg" alt="Carlos Barreto, psicanalista" width="340" height="425"></div>
         </figure>
-        <p class="label">Quem escuta</p>
-        <h2>Carlos Barreto</h2>
-        <p>Psicanalista e escritor, criador da Clínica da Escuta. Meu trabalho nasce do encontro com histórias e da convicção de que ser escutado com presença pode ser o início de uma nova forma de existir.</p>
-        <p>Busco tornar o cuidado emocional mais acessível, sem abrir mão da complexidade que cada história carrega.</p>
+        <div class="sobre-texto">
+          <p class="label">Quem escuta</p>
+          <h2>Carlos Barreto</h2>
+          <p>Psicanalista e escritor, criador da Clínica da Escuta. Meu trabalho nasce do encontro com histórias e da convicção de que ser escutado com presença pode ser o início de uma nova forma de existir.</p>
+          <p>Busco tornar o cuidado emocional mais acessível, sem abrir mão da complexidade que cada história carrega.</p>
+        </div>
       </div>
-      <div class="card" style="margin-top:0">
-        <h3>Participação</h3>
-        <ul class="clean">
-          <li>Membro do <a href="https://cpapec.org/" target="_blank" rel="noopener noreferrer">Coletivo de Pesquisa Ativista em Psicanálise Educação e Cultura</a></li>
-          <li>Membro da <a href="https://cpapec.org/epep" target="_blank" rel="noopener noreferrer">Escola Psicanalítica da Escuta Periphérica</a></li>
-          <li>Membro da <a href="https://site-zqre18q3o.godaddysites.com/" target="_blank" rel="noopener noreferrer">Sociedade Psicanalítica Ecos Freudianos</a></li>
-        </ul>
-        <h3>Atuação</h3>
-        <ul class="clean">
-          <li>Clínica da Escuta</li>
-          <li><a href="https://cpapec.org/clinica" target="_blank" rel="noopener noreferrer">Dispositivo de Escuta Xica Manicongo</a></li>
-        </ul>
-        <h3>Percurso</h3>
-        <ul class="clean">
-          <li><a href="percurso.html" target="_blank" rel="noopener noreferrer">Meu percurso</a></li>
-        </ul>
+      <div class="card sobre-caixa">
+        <div>
+          <h3>Participação</h3>
+          <ul class="clean">
+            <li>Membro do <a href="https://cpapec.org/" target="_blank" rel="noopener noreferrer">Coletivo de Pesquisa Ativista em Psicanálise Educação e Cultura</a></li>
+            <li>Membro da <a href="https://cpapec.org/epep" target="_blank" rel="noopener noreferrer">Escola Psicanalítica da Escuta Periphérica</a></li>
+            <li>Membro da <a href="https://site-zqre18q3o.godaddysites.com/" target="_blank" rel="noopener noreferrer">Sociedade Psicanalítica Ecos Freudianos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Atuação</h3>
+          <ul class="clean">
+            <li>Clínica da Escuta</li>
+            <li><a href="https://cpapec.org/clinica" target="_blank" rel="noopener noreferrer">Dispositivo de Escuta Xica Manicongo</a></li>
+          </ul>
+          <h3>Percurso</h3>
+          <ul class="clean">
+            <li><a href="percurso.html" target="_blank" rel="noopener noreferrer">Meu percurso</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
