@@ -76,6 +76,7 @@ header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px s
 .hero{padding:clamp(1.5rem,4vw,3rem) 0 clamp(1.5rem,3.5vw,2.5rem)}
 .hero-grid{display:grid;gap:1.75rem;grid-template-columns:1fr;align-items:center}
 @media(min-width:800px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:3rem}}
+@media(max-width:799px){.hero-grid .flagfig{order:-1}}
 .hero .lead{font-size:1.2rem;color:var(--muted);max-width:50ch}
 .note{font-size:.95rem;color:var(--muted);margin:.75rem 0 0}
 .portrait{margin:0;max-width:340px}
